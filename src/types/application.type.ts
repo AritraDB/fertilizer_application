@@ -6,3 +6,8 @@ export interface MUITextFieldProps {
   required: boolean;
   errors: any;
 }
+
+export interface SinleMenuListHOC {
+  IconComponentName: any;
+  menuTitle: string;
+}

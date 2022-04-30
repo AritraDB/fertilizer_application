@@ -13,8 +13,8 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { schema } from "../../validations/login-validation";
-import MUITextField from "../mui-components/MUITextField/MUITextField";
+import MUITextField from "../../mui-components/MUITextField/MUITextField";
+import { schema } from "../../../validations/login-validation";
 
 const theme = createTheme();
 
