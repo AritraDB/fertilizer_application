@@ -1,13 +1,13 @@
-import * as React from 'react';
-import { TextField } from '@mui/material';
-import { Controller } from 'react-hook-form';
-import { MUITextFieldProps } from '../../../types/application.type';
+import * as React from "react";
+import { TextField } from "@mui/material";
+import { Controller } from "react-hook-form";
+import { MUITextFieldProps } from "../../../types/application.type";
 
 export default function MUITextField({
   label,
   name,
   control,
-  defaultValue = '',
+  defaultValue = "",
   required,
   errors,
 }: MUITextFieldProps) {
@@ -24,7 +24,10 @@ export default function MUITextField({
           label={required ? requiredLabel : label}
           variant="outlined"
           error={!!errors}
-          helperText={errors ? errors?.message : ''}
+          helperText={errors ? errors?.message : ""}
+          fullWidth
+          sx={{ pb: 1 }}
+          size="medium"
         />
       )}
     />
