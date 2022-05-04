@@ -11,6 +11,8 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ProjectDetails from "../ProductDetails/ProductDetails";
 import UIConstants from "../../../constants/TextConstants";
+import { useEffect } from "react";
+import axios from "../../../http-handler/axios-config";
 
 const mdTheme = createTheme();
 
@@ -19,12 +21,32 @@ const mdTheme = createTheme();
  * @param no_prop not applicable
  * @returns displays the Project Information (along with Accordion) screen: parent: dashboard, child: ProjectDetails
  */
-export default function ProjectInformation() {
+export default function ProductInformation() {
   const [expanded, setExpanded] = React.useState("");
 
   const handleChange = (panel: any) => (event: any, isExpanded: any) => {
     setExpanded(isExpanded ? panel : "");
   };
+
+  let responseData: any;
+  const getDemoHTTPData = () => {
+    axios
+      .get("todos/1")
+      .then(
+        (response) => {
+          responseData = response.data;
+        }
+        // console.log(`response ==> ${JSON.stringify(response.data)}`)
+      )
+      .catch((error) => {
+        // console.log(`error ==> ${JSON.stringify(error.message)}`);
+        // console.error("There was an error!", error);
+      });
+  };
+  useEffect(() => {
+    getDemoHTTPData();
+    console.log(`responseData ==> ${JSON.stringify(responseData)}`);
+  });
 
   return (
     <ThemeProvider theme={mdTheme}>
@@ -61,6 +83,7 @@ export default function ProjectInformation() {
                     </Typography>
                   </AccordionSummary>
                   <AccordionDetails>
+                    {responseData}
                     <ProjectDetails />
                   </AccordionDetails>
                 </Accordion>

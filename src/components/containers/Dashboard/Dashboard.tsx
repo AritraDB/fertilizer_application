@@ -18,14 +18,14 @@ import {
   LeftMenuBar,
   mdTheme,
   TopNavBar,
-} from "../TemplateFrame/TemplateFrame";
+} from "../TemplateFrame/TemplateFrame.style";
 import UIConstants from "../../../constants/TextConstants";
-import ProjectInformation from "../ProductInformation/ProductInformation";
+import ProductInformation from "../ProductInformation/ProductInformation";
 
 /**
  * Shows each cart item
  * @param no_prop not applicable
- * @returns displays the Dashboard screen: parent: NA, child: ProjectInformation
+ * @returns displays the Dashboard screen: parent: NA, child: ProductInformation
  */
 function DashboardContent() {
   const [open, setOpen] = React.useState(true);
@@ -106,7 +106,7 @@ function DashboardContent() {
         {/* LEFT NAV BAR */}
 
         <styledComp.Width100>
-          <ProjectInformation />
+          <ProductInformation />
         </styledComp.Width100>
       </Box>
     </ThemeProvider>

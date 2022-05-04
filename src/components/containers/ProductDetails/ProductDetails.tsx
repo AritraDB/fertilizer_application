@@ -11,7 +11,7 @@ import UIConstants from "../../../constants/TextConstants";
 /**
  * Shows each cart item
  * @param no_prop not applicable
- * @returns displays the Project Details (yupResolver and submit button) screen: parent: ProjectInformation, child: AddProjectDetailsForm
+ * @returns displays the Project Details (yupResolver and submit button) screen: parent: ProductInformation, child: AddProjectDetailsForm
  */
 
 export default function ProjectDetails() {

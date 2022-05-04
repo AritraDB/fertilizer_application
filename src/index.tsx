@@ -6,6 +6,21 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme/theme";
+import { AxiosRequestConfig } from "axios";
+import axios from "./http-handler/axios-config";
+
+axios.interceptors.request.use((request: AxiosRequestConfig) => {
+  if (request.headers) {
+    request.headers.demoToken1 = "111";
+  }
+  console.log(request);
+  return request;
+});
+
+axios.interceptors.response.use((response) => {
+  console.log(response);
+  return response;
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
